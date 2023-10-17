@@ -74,7 +74,7 @@ Route::post('school-plans/get',
     [App\Http\Controllers\SchoolPlanController::class, 'get']
 )->name('school-plans.get');
 
-Route::get('search/students', [\App\View\Components\SearchStudent::class, 'search']);
+Route::get('search/students', [\App\Http\Controllers\StudentController::class, 'search']);
 Route::get('search/counties', [\App\Http\Controllers\CountyController::class, 'search']);
 
 Route::get('pdf/student/{student}', [\App\Http\Controllers\PdfController::class, 'student'])

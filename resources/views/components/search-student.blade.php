@@ -1,3 +1,5 @@
+@props(['students'])
+
 <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div class="p-4 my-2 bg-white rounded-lg shadow-md">
 

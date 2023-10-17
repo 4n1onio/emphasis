@@ -8,16 +8,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    {{-- Bootstrap v4.6 --}}
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-
-    {{-- Fontawesome --}}
-    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" />
-
-    {{-- Custom style --}}
-    <link rel="stylesheet" href="{{ asset('css/printform.css') }}" />
-
-    {{ $customStyles }}
+    <link rel="stylesheet" href="{{ asset('css/bs.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/fa.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" />
 </head>
 
 <body>

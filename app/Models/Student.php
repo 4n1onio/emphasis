@@ -179,4 +179,14 @@ class Student extends Model
             return null;
         }
     }
+
+
+    /**
+     * Count all records
+     * @return int Total records
+     */
+    public static function records(): int
+    {
+        return self::all('id')->count();
+    }
 }

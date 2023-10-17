@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <x-search-student />
+    <x-search-student :students="$records" />
 
     <x-layouts.card>
 

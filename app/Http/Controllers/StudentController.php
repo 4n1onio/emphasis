@@ -17,6 +17,16 @@ class StudentController extends Controller
     }
 
     /**
+     * Summary of search
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Pagination\LengthAwarePaginator
+     */
+    public function search(Request $request)
+    {
+        return Student::search($request);
+    }
+
+    /**
      * Display a listing of the resource.
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
@@ -33,9 +43,10 @@ class StudentController extends Controller
             }
         }
 
+        $records = Student::count();
         $students = Student::items();
 
-        return view('others.student.index', compact('students'));
+        return view('others.student.index', compact('students', 'records'));
     }
 
     /**

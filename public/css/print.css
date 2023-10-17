@@ -1,0 +1,19 @@
+.form-control {
+    width: 80%;
+}
+
+.photo {
+    color: #606060;
+    font-size: 4rem;
+    text-align: center;
+    width: 128px;
+    height: 128px;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 100%;
+    background-color: #ddd;
+}
+
+small {
+    font-size: x-small;
+}
