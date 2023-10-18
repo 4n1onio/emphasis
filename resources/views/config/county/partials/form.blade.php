@@ -37,7 +37,7 @@
         <div>
             <x-input-label for="name">
                 <i class="fa-regular fa-map"></i>
-                {{ __('County') }}
+                {{ __('Counties') }}
             </x-input-label>
 
             <x-text-input type="text" name="name" id="name" class="py-1 px-2"
