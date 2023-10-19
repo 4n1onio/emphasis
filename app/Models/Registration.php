@@ -128,7 +128,7 @@ class Registration extends Model
 
     /**
      * Store the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\StoreRegistrationRequest $request
      * @return array
      */
     public static function store($request): array
@@ -151,12 +151,12 @@ class Registration extends Model
 
     /**
      * Update the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\UpdateRegistrationRequest $request
      * @return array
      */
     public function _update($request): array
     {
-        if ($this->update(attributes: $request->all())) {
+        if ($this->update($request->all())) {
             return [
                 'status' => true,
                 'message' => 'Dados actualizados',

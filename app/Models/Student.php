@@ -45,7 +45,7 @@ class Student extends Model
 
     /**
      * Store the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\StoreStudentRequest $request
      * @return array
      */
     public static function store($request): array
@@ -68,7 +68,7 @@ class Student extends Model
 
     /**
      * Update the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\UpdateStudentRequest $request
      * @return array
      */
     public function _update($request): array
@@ -119,6 +119,7 @@ class Student extends Model
     public static function take(int $id): array
     {
         $student = self::find($id);
+        
         if ($student) {
             return [
                 'status' => true,

@@ -59,7 +59,7 @@ class CreatedClass extends Model
 
     /**
      * Store the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\StoreCreatedClassRequest $request
      * @return array
      */
     public static function store($request): array
@@ -82,7 +82,7 @@ class CreatedClass extends Model
 
     /**
      * Update the data from request to this model
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\UpdateCreatedClassRequest $request
      * @return array
      */
     public function _update($request): array
