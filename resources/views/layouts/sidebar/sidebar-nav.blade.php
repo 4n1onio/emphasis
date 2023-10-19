@@ -14,43 +14,43 @@
                 {{-- student --}}
                 <x-sidebar.dropdown-link :href="route('students.index')">
                     <i class="fa-solid fa-user-plus"></i>
-                    {{ __('Create student') }}
+                    {{ __('Students') }}
                 </x-sidebar.dropdown-link>
 
                 {{-- naturalness --}}
-                <x-sidebar.dropdown-link href="{{ route('counties.index') }}">
+                <x-sidebar.dropdown-link :href="route('counties.index')">
                     <i class="fa-solid fa-map"></i>
-                    Registar naturalidade
+                    {{ __('Counties') }}
                 </x-sidebar.dropdown-link>
 
                 {{-- school enrollment --}}
                 <x-sidebar.dropdown class="p-1 border-0">
                     <x-slot name="trigger">
                         <i class="fa-solid fa-inbox"></i>
-                        Matrícula
+                        {{ __('Enrolls') }}
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-sidebar.dropdown-link>
+                        <x-sidebar.dropdown-link :href="route('registrations.create')">
                             <i class="fa-solid fa-plus-circle"></i>
-                            Realizar matrícula
+                            Realizar
+                        </x-sidebar.dropdown-link>
+
+                        <x-sidebar.dropdown-link :href="route('registrations.index')">
+                            <i class="fa-solid fa-check-circle"></i>
+                            Realizadas
                         </x-sidebar.dropdown-link>
 
                         <x-sidebar.dropdown-link>
                             <i class="fa-regular fa-folder"></i>
-                            Dados da matrícula
-                        </x-sidebar.dropdown-link>
-
-                        <x-sidebar.dropdown-link>
-                            <i class="fa-regular fa-folder"></i>
-                            Situação da matrícula
+                            Estado
                         </x-sidebar.dropdown-link>
 
                         {{-- receipts --}}
                         <x-sidebar.dropdown class="p-1 border-0">
                             <x-slot name="trigger">
-                                <i class="fa-solid fa-file"></i>
-                                Imprimir recibo
+                                <i class="fa-solid fa-print"></i>
+                                Recibos
                             </x-slot>
 
                             <x-slot name="content">
@@ -79,27 +79,27 @@
             </x-slot>
 
             <x-slot name="content">
-                {{-- classrooms --}}
+                {{-- Created classes --}}
                 <x-sidebar.dropdown class="p-1 border-0">
                     <x-slot name="trigger">
                         <i class="fa-solid fa-inbox"></i>
-                        Turmas
+                        {{ __('Created classes') }}
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-sidebar.dropdown-link href="{{ route('created-classes.index') }}">
+                        <x-sidebar.dropdown-link :href="route('created-classes.index')">
                             <i class="fa-solid fa-plus-circle"></i>
-                            Criar turma
+                            Criar
                         </x-sidebar.dropdown-link>
 
                         <x-sidebar.dropdown-link>
                             <i class="fa-solid fa-user-plus"></i>
-                            Inserir aluno na turma
+                            Inserção de aluno
                         </x-sidebar.dropdown-link>
 
                         <x-sidebar.dropdown-link>
                             <i class="fa-solid fa-edit"></i>
-                            Mudar número de ordem
+                            Alterar ordem
                         </x-sidebar.dropdown-link>
 
                         {{-- change classroom student --}}
@@ -107,7 +107,7 @@
 
                             <x-slot name="trigger">
                                 <i class="fa-solid fa-edit"></i>
-                                Mudar turma do aluno
+                                Mudar aluno de turma
                             </x-slot>
 
                             <x-slot name="content">
@@ -126,16 +126,16 @@
                     </x-slot>
                 </x-sidebar.dropdown>
 
-                {{-- teachers' classroom --}}
+                {{-- Teachers and created classes --}}
                 <x-sidebar.dropdown-link>
                     <i class="fa-regular fa-circle"></i>
-                    Turmas do professor
+                    Professor | Turma
                 </x-sidebar.dropdown-link>
 
                 {{-- Notes --}}
                 <x-sidebar.dropdown-link>
                     <i class="fa-regular fa-paste"></i>
-                    Lançar notas
+                    Publicação de notas
                 </x-sidebar.dropdown-link>
             </x-slot>
 
@@ -162,7 +162,7 @@
         <x-sidebar.dropdown>
             <x-slot name="trigger">
                 <i class="fa-solid fa-cog"></i>
-                Configurações
+                {{ __('Config') }}
             </x-slot>
 
             <x-slot name="content" class="flex flex-col gap-y-2">

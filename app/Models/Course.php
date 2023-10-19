@@ -122,4 +122,14 @@ class Course extends Model
     {
         return $this->hasMany(CreatedClass::class);
     }
+
+
+    /**
+     * get all registrations by the relationship
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function registrations(): HasMany
+    {
+        return $this->hasMany(Registration::class);
+    }
 }

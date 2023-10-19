@@ -1,6 +1,6 @@
-<div role="alert" x-show="open" x-data="{ open: true }" x-transition
+<div role="alert"
     class="rounded-xl border border-gray-100 shadow
-        bg-white p-4 border-l-8 border-l-violet-500">
+        bg-slate-50 p-4 border-l-8 border-l-violet-500">
 
     <div class="flex items-start gap-8">
         <span class="text-violet-500 text-4xl">
@@ -8,7 +8,7 @@
         </span>
 
         <div class="flex-1">
-            <strong class="text-xl block font-bold text-indigo-800">
+            <strong class=" text-xl block font-bold text-indigo-800">
                 Informação
             </strong>
 
@@ -20,11 +20,5 @@
                 <x-cancel-button title="Retroceder" />
             </div>
         </div>
-
-        <button class="text-violet-400 transition hover:text-violet-600"
-            x-on:click="open = !open">
-
-            <i class="fa-solid fa-xmark fa-xl"></i>
-        </button>
     </div>
 </div>

@@ -44,7 +44,8 @@ Route::resources(
         'prices'                => App\Http\Controllers\PriceController::class,
         'students'              => App\Http\Controllers\StudentController::class,
         'counties'              => App\Http\Controllers\CountyController::class,
-        'created-classes'       => App\Http\Controllers\CreatedClassController::class
+        'created-classes'       => App\Http\Controllers\CreatedClassController::class,
+        'registrations'         => App\Http\Controllers\RegistrationController::class
     ],
 );
 

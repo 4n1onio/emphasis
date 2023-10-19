@@ -3,7 +3,7 @@
         <div
             {{ $header->attributes->merge([
                 'class' => 'bg-transparent text-xl
-                            border-b p-4',
+                            border-b p-4'
             ]) }}>
 
             {{ $header }}

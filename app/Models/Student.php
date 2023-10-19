@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
@@ -188,5 +189,15 @@ class Student extends Model
     public static function records(): int
     {
         return self::all('id')->count();
+    }
+
+
+    /**
+     * Get all registrations by the relationship
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function registrations(): HasMany
+    {
+        return $this->hasMany(Registration::class);
     }
 }

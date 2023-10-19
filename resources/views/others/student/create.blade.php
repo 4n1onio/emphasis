@@ -4,7 +4,7 @@
         <x-slot name="header">
             <h1 class="h1">
                 <i class="fa-solid fa-user-plus"></i>
-                {{ __('Create student') }}
+                {{ __('Students') }}
             </h1>
         </x-slot>
 

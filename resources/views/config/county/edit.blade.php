@@ -4,7 +4,7 @@
         <x-slot name="header">
             <h1 class="h1">
                 <i class="fa-solid fa-map"></i>
-                {{ __('County') }}
+                {{ __('Counties') }}
             </h1>
         </x-slot>
 

@@ -4,7 +4,7 @@
         <x-slot name="header" class="flex justify-between">
             <h1 class="h1">
                 <i class="fa-solid fa-map"></i>
-                <span>{{ __('County') }}</span>
+                <span>{{ __('Counties') }}</span>
             </h1>
 
             <x-add-btn :href="route('counties.create')" />
