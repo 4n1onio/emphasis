@@ -11,8 +11,11 @@
                             Ano letivo
                         </x-input-label>
 
-                        <x-select name="school_year_id" class="select2" id="school_year">
-                            @foreach ($school_years as $school_year)
+                        <x-select name="school_year_id" class="select2" id="school_year" required>
+                            <option>
+                            </option>
+
+                            @foreach ($model->school_years() as $school_year)
                                 <option value="{{ $school_year->id }}">
                                     {{ $school_year->year }}
                                 </option>
@@ -37,10 +40,9 @@
         </div>
     </div>
 
-
     <x-layouts.card>
 
-        <x-slot name="header" class="flex justify-between">
+        <x-slot name="header">
             <h1 class="h1">
                 <i class="fa-solid fa-file-alt"></i>
                 <span>{{ __('Enrolled') }}</span>
@@ -54,7 +56,7 @@
                         <tr>
                             <th>
                                 <i class="fa-solid fa-vcard"></i>
-                                Nº do processo
+                                Nº da matrícula
                             </th>
 
                             <th>
@@ -73,7 +75,7 @@
                         @foreach ($registrations as $registration)
                             <tr class="tbody-row">
                                 <td>
-                                    {{ $registration->student->processNb }}
+                                    {{ $registration->id }}
                                 </td>
 
                                 <td>
@@ -81,7 +83,7 @@
                                 </td>
 
                                 <td class="cog">
-                                    <x-table.show-btn :href="route('students.show', $registration->student)" />
+                                    <x-table.show-btn :href="route('registrations.show', $registration)" />
 
                                     <x-table.edit-btn :href="route('registrations.edit', $registration)" />
 
@@ -93,7 +95,7 @@
 
                 </x-table.light>
 
-                @if (!session()->has('registrations'))
+                @if (!isset($_REQUEST['student_id']))
                     {{ $registrations->links() }}
                 @endif
             @else

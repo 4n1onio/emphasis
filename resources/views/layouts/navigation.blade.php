@@ -1,9 +1,7 @@
 <nav class="bg-white border-b border-gray-100 shadow-sm">
-
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-
             <!-- Logo -->
             <div class="flex items-center shrink-0">
                 <a href="{{ route('dashboard') }}" class="text-indigo-600">
@@ -46,8 +44,6 @@
                     </x-slot>
                 </x-dropdown>
             </div>
-
         </div>
     </div>
-
 </nav>

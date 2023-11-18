@@ -4,7 +4,7 @@
         <x-slot name="header">
             <h1 class="h1">
                 <i class="fa-solid fa-inbox"></i>
-                <span>{{ __('Created class') }}</span>
+                <span>{{ __('Created classes') }}</span>
             </h1>
         </x-slot>
 

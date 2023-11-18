@@ -5,7 +5,7 @@
         <div class="absolute -top-4 lg:left-1/2 transform lg:-translate-x-1/2 bg-gray-200 rounded-lg">
             <span class="inline-block m-2 text-gray-500 font-semibold">
                 <i class="fa-solid fa-user"></i>
-                Dados pessoais
+                Dados do aluno
             </span>
         </div>
 
@@ -151,7 +151,7 @@
         <div class="absolute -top-4 lg:left-1/2 transform lg:-translate-x-1/2 bg-gray-200 rounded-lg">
             <span class="inline-block m-2 text-gray-500 font-semibold">
                 <i class="fa-solid fa-file-alt"></i>
-                Matrícula
+                Dados da matrícula
             </span>
         </div>
 
@@ -233,7 +233,6 @@
                 <x-input-error :messages="$errors->get('course_id')" class="mt-2" />
             </div>
         </div>
-
         <div class="flex items-end justify-end">
             <x-cancel-button />
 

@@ -22,7 +22,9 @@ class Registration extends Model
      */
     public static function items($pages = 8): Paginator
     {
-        return self::latest()->simplePaginate($pages);
+        return self::where('school_year_id', self::current_year()->id)
+            ->latest()
+            ->simplePaginate($pages);
     }
 
 
@@ -35,7 +37,8 @@ class Registration extends Model
     public static function search(int $key1, int $key2): Collection
     {
         return self::where('school_year_id', $key1)
-            ->where('student_id', $key2)->get();
+            ->where('student_id', $key2)
+            ->get();
     }
 
 
@@ -89,8 +92,9 @@ class Registration extends Model
 
     /**
      * Get all school years from School Year model
+     * @return \App\Models\SchoolYear
      */
-    public static function current_year()
+    public static function current_year(): SchoolYear
     {
         return SchoolYear::orderBy('id', 'desc')->first();
     }

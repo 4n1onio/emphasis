@@ -4,7 +4,7 @@
         <x-slot name="header" class="flex justify-between">
             <h1 class="h1">
                 <i class="fa-solid fa-inbox"></i>
-                <span>{{ __('Created class') }}</span>
+                <span>{{ __('Created classes') }}</span>
             </h1>
 
             <x-add-btn :href="route('created-classes.create')" />

@@ -26,30 +26,19 @@ class RegistrationController extends Controller
      */
     public function index(Request $request): View|RedirectResponse
     {
-        $school_years = Registration::school_years();
-
         if ($request->has(['student_id', 'school_year_id'])) {
             $key1 = $request->get('school_year_id');
             $key2 = $request->get('student_id');
 
             $registrations = Registration::search($key1, $key2);
-
-            return redirect(route('registrations.index'))
-                ->with('registrations', $registrations);
-
-        } elseif (session()->has('registrations')) {
-            $registrations = session()->get('registrations');
-
-            if ($registrations->count() > 0) {
-                toast('Matrícula existente', 'success');
-            } else {
-                toast('Matrícula inexistente', 'info');
-            }
         } else {
             $registrations = Registration::items();
         }
 
-        return view('others.registration.index', compact('registrations', 'school_years'));
+        return view('others.registration.index', [
+            'registrations' => $registrations,
+            'model' => $this->model
+        ]);
     }
 
     /**
@@ -60,14 +49,11 @@ class RegistrationController extends Controller
     public function create(Request $request): View
     {
         if ($request->has('id')) {
-
             return view('others.registration.create', [
-                'model' => $this->model,
-                'student' => Registration::get_student($request->get('id'))
+                'student' => Registration::get_student($request->get('id')),
+                'model' => $this->model
             ]);
-
         } else {
-
             if ($request->has('student_id')) {
                 if ($students = Registration::find_student($request->get('student_id'))) {
                     toast('Aluno encontrado', 'success');
@@ -77,7 +63,6 @@ class RegistrationController extends Controller
             } else {
                 $students = Registration::students();
             }
-
             $records = Registration::nb_students();
 
             return view('others.registration.create', compact('students', 'records'));
@@ -103,10 +88,12 @@ class RegistrationController extends Controller
 
     /**
      * Display the specified resource.
+     * @param \App\Models\Registration
+     * @return \Illuminate\View\View
      */
-    public function show(Request $request, Registration $registration)
+    public function show(Registration $registration)
     {
-        //
+        return view('others.registration.show', compact('registration'));
     }
 
     /**
